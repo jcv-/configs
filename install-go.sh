@@ -3,7 +3,7 @@
 set -e
 
 # Get the latest Go version number
-LATEST_VERSION=$(curl -s https://go.dev/VERSION?m=text)
+LATEST_VERSION=$(curl -s https://go.dev/VERSION?m=text | grep go)
 GO_URL="https://go.dev/dl/${LATEST_VERSION}.linux-amd64.tar.gz"
 
 # Define installation directory
@@ -39,4 +39,3 @@ if ! grep -q 'export PATH=$PATH:/usr/local/go/bin' ~/.profile; then
 fi
 
 echo "Go installation completed. Restart your terminal or run 'source ~/.bashrc' to apply changes."
-go version
