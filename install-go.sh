@@ -20,7 +20,7 @@ if [ -d "$GO_BIN" ]; then
 fi
 
 # Download the latest Go tarball
-curl -LO "$GO_URL"
+curl -sLO "$GO_URL"
 
 # Extract and install
 echo "Installing Go..."
